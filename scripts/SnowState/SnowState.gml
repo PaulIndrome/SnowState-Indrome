@@ -887,6 +887,8 @@ function SnowState(_initState, _execEnter = true) constructor {
 			__snowstate_error("Destination state name can not be the same as SNOWSTATE_WILDCARD_TRANSITION_NAME.");
 			return undefined;
 		}
+		
+		_condition ??= function(){ return true; };
 			
 		if (!__is_really_a_method(_condition)) {
 			__snowstate_error("Invalid value for \"condition\" in add_transition(). Should be a function.");
